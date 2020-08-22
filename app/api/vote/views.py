@@ -5,3 +5,5 @@ from flask import Blueprint, jsonify, request
 vote = Blueprint("vote", __name__)
 
 
+def create_vote():
+    pass
