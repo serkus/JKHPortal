@@ -3,7 +3,6 @@
 
 from flask import Blueprint, jsonify, request
 from db import DB a as api_db
-r
 questionnaire = Blueprint("questionnaire", __name__)
 
 @questionnaire.route('/questionnaires', methods=['GET'])
@@ -21,7 +20,6 @@ def questionnaireIndex():
 	}
 	return jsonify(response),  200
 
-
 @questionnaire.route('/questionnaires/<int:id>')
 def questionnaireIndex():
 	dataset = api_db.getTask('task', id)
@@ -35,6 +33,5 @@ def questionnaireIndex():
 @questionnaire.route('/questionnaires/add/<int:id>')
 def questionnaireAdd():
 	dataset = api_db.getTask('task', result)
-	 
 	response = {}
 	return 200
