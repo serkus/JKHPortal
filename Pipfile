@@ -17,6 +17,7 @@ flask-mail = "*"
 flask-cors = "*"
 python-dotenv = "*"
 requests = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"

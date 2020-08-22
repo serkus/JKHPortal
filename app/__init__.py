@@ -72,5 +72,8 @@ def create_app(config_name):
     from .api.blockchain import blockchain as blockchain_blueprint
     app.register_blueprint(blockchain_blueprint, url_prefix='/v1/vote')
 
+    from .api.auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint, url_prefix='/v1/auth')
+
     return app
 
