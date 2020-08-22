@@ -11,6 +11,7 @@ from flask_mail import Mail
 # from flask_uploads import UploadSet, configure_uploads, patch_request_class
 # from flask_wtf import CsrfProtect
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
 # from celery import Celery
 
 from config import config
@@ -21,7 +22,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # mail = Mail()
 cors = CORS()
-# db = MongoEngine()
+db = SQLAlchemy()
 wtforms_json.init()
 # csrf = CsrfProtect()
 compress = Compress()
@@ -46,6 +47,7 @@ def create_app(config_name):
     # csrf.init_app(app)
     # jwt.init_app(app)
     compress.init_app(app)
+    db.init_app(app)
     # RQ(app)
     cors.init_app(app, resources={r"/v1/*": {"origins": "*"}})
     # configure_uploads(app, [photos, docs])

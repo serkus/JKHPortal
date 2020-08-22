@@ -4,7 +4,7 @@ from flask_script import Manager
 from redis import Redis
 # from rq import Connection, Queue, Worker
 
-from app import create_app
+from app import create_app, db
 # from app.models import Role, User
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
@@ -18,6 +18,16 @@ def test():
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
+
+@manager.command
+def recreate_db():
+    """
+    Recreates a local database. You probably should not use this on
+    production.
+    """
+    db.drop_all()
+    db.create_all()
+    db.session.commit()
 
 # @manager.command
 # def setup_dev():
