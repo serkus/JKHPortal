@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+raygun4py = "*"
+flask-script = "*"
+redis = "*"
+wtforms-json = "*"
+flask-assets = "*"
+flask-compress = "*"
+flask-mail = "*"
+flask-cors = "*"
+python-dotenv = "*"
+requests = "*"
+
+[requires]
+python_version = "3.8"
